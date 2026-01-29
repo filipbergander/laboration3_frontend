@@ -1,0 +1,44 @@
+@use "abstracts/variables";
+:root {
+    color-scheme: light dark;
+}
+
+body {
+    background-color: variables.$secondary-color;
+    color: variables.$primary-color;
+    font-family: variables.$font-stack;
+    font-weight: 600;
+}
+
+nav {
+    gap: 5rem;
+    ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+    }
+    li {
+        background-color: variables.$element-color;
+        border-radius: 8px;
+        display: flex;
+        &:hover {
+            background-color: darken(variables.$element-color, 10%);
+        }
+    }
+    a {
+        display: flex;
+        padding: 6px 10px;
+        text-decoration: none;
+        color: variables.$color-light;
+        font-weight: 600;
+        letter-spacing: 1px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: variables.$primary-color;
+        color: variables.$color-light;
+    }
+}
