@@ -1,0 +1,13 @@
+@use "abstracts/variables";
+.btn-darkened {
+    background-color: variables.$primary-color;
+    color: variables.$color-light;
+    border-radius: 8px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: background-color .3s;
+    &.dark {
+        background-color: variables.$color-light;
+        color: variables.$primary-color;
+    }
+}

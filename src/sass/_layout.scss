@@ -10,6 +10,11 @@ body {
     font-weight: 600;
 }
 
+body.dark {
+    background-color: variables.$primary-color;
+    color: variables.$color-light;
+}
+
 nav {
     gap: 5rem;
     ul {
@@ -23,7 +28,7 @@ nav {
         border-radius: 8px;
         display: flex;
         &:hover {
-            background-color: darken(variables.$element-color, 10%);
+            background-color: adjust(variables.$element-color, 10%);
         }
     }
     a {
@@ -33,6 +38,24 @@ nav {
         color: variables.$color-light;
         font-weight: 600;
         letter-spacing: 1px;
+    }
+}
+
+.image-area {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    border-radius: 8px;
+    box-shadow: 0 0 5px 2px black;
+    border: 2px solid variables.$element-color;
+    &:hover {
+        transform: scale(1.02);
+        border: 2px solid variables.$color-light;
+        transition: .3s;
     }
 }
 
