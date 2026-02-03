@@ -1,6 +1,9 @@
 "use strict";
 import '/src/sass/main.scss';
 
+const toggleBtn = document.getElementById("btn-menu");
+const closeBtn = document.getElementById("btn-close")
+
 const darkBtn = document.querySelector(".btn-darkened"); // Knapp för att toggla mörkt/ljust tema på startsidan.
 
 darkBtn.addEventListener("click", () => {
@@ -12,3 +15,13 @@ darkBtn.addEventListener("click", () => {
         darkBtn.innerHTML = "Mörkt tema";
     }
 })
+
+toggleBtn.addEventListener("click", () => {
+    toggleBtn.classList.toggle("close");
+    closeBtn.classList.toggle("show");
+});
+
+closeBtn.addEventListener("click", () => {
+    closeBtn.classList.remove("show");
+    toggleBtn.classList.remove("close");
+});
