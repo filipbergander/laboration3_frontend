@@ -1,7 +1,12 @@
+@use "sass:color";
 $primary-color: #211e1e;
 $secondary-color:#e98f08;
-$element-color: #251754;
+$element-color: #d31313;
 $font-stack: Helvetica,
 sans-serif;
 $color-light: #fff;
 $btn-color: #33CCCC;
+$lightened-color: color.scale($btn-color, $lightness:20%);
+$darkened-color: color.scale($btn-color, $lightness:-20%);
+$complement-color: color.complement($element-color);
+$complement2-color: color.complement($secondary-color);
