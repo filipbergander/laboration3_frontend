@@ -1,4 +1,4 @@
-        @use "abstracts/variables";
+        @use "abstracts/variables" as *;
         %flex-layout {
             display: flex;
             align-items: center;
@@ -19,13 +19,23 @@
             }
             @else {
                 color: black;
-                background-color: variables.$btn-color;
+                background-color: $btn-color;
             }
         }
         
+        footer {
+            @extend %flex-layout;
+            font-family: $text-fantasy;
+            height: 60px;
+            background-color: $primary-color;
+            color: white;
+            width: 100%;
+            margin-top: 1rem;
+        }
+        
         body {
-            background-color: variables.$secondary-color;
-            color: variables.$primary-color;
+            background-color: $secondary-color;
+            color: $primary-color;
             font-weight: 600;
             min-height: 100vh;
             display: flex;
@@ -38,22 +48,33 @@
         }
         
         body.dark {
-            background-color: variables.$primary-color;
-            color: variables.$color-light;
+            background-color: $primary-color;
+            color: $color-light;
             footer {
-                border-top: 1px solid rgba(255, 255, 255, 0.226);
+                border-top: $border;
             }
         }
         
         @media (prefers-color-scheme: dark) {
             body {
-                background-color: black;
-                color: white;
+                background-color: $primary-color;
+                color: $color-light;
+                footer {
+                    border-top: $border;
+                }
+            }
+            #btn-menu {
+                span {
+                    color: white;
+                }
+                svg path {
+                    fill: white;
+                }
             }
         }
         
         header {
-            font-family: variables.$font-stack;
+            font-family: $font-stack;
             @extend %flex-layout;
             width: 100%;
         }
@@ -74,27 +95,26 @@
                 display: flex;
                 padding: 6px 10px;
                 text-decoration: none;
-                color: variables.$color-light;
+                color: $color-light;
                 height: 100%;
                 font-weight: 600;
                 @include text-style(1.2rem);
                 letter-spacing: 1px;
                 border-radius: 8px;
-                background-color: variables.$complement-color;
+                background-color: $complement-color;
                 box-sizing: border-box;
                 &:hover {
-                    background-color: variables.$lightened-color;
+                    background-color: $lightened-color;
                     transition: .3s;
                 }
             }
             a:active {
-                background-color: variables.$darkened-color;
-                color: variables.$color-light;
+                background-color: $darkened-color;
+                color: $color-light;
             }
         }
         
         .image-area {
-            /*  @extend %flex-layout;*/
             display: grid;
             grid-template-columns: repeat(2, 450px);
             grid-template-rows: auto;
@@ -105,7 +125,7 @@
             img {
                 border-radius: 8px;
                 box-shadow: 0 0 5px 2px black;
-                border: 2px solid variables.$element-color;
+                border: 2px solid $element-color;
                 &:hover {
                     transform: scale(1.02);
                     border: 2px solid white;
@@ -119,7 +139,7 @@
             flex: 1;
             max-width: 1240px;
             text-align: center;
-            font-family: variables.$text-main;
+            font-family: $text-main;
             section {
                 @extend %flex-layout;
                 justify-content: flex-start;
@@ -137,16 +157,6 @@
             li {
                 margin-bottom: 1rem;
             }
-        }
-        
-        footer {
-            @extend %flex-layout;
-            font-family: variables.$text-fantasy;
-            height: 60px;
-            background-color: variables.$primary-color;
-            color: white;
-            width: 100%;
-            margin-top: 1rem;
         }
         
         @media (max-width:950px) {
@@ -187,7 +197,7 @@
                 z-index: 15;
                 transform: translateX(100%);
                 transition: left 0.4s ease-in-out;
-                background-color: variables.$primary-color;
+                background-color: $primary-color;
                 margin-right: 0;
                 padding: 0;
             }
@@ -198,7 +208,8 @@
                 width: 100%;
                 ul {
                     flex-direction: column;
-                    gap: 2rem;
+                    justify-content: flex-start;
+                    gap: 1rem;
                     margin-left: auto;
                 }
                 li {

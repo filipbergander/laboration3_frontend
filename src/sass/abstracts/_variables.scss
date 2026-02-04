@@ -2,6 +2,8 @@
 $primary-color: #211e1e;
 $secondary-color:#f8d063be;
 $element-color: #f3b406fa;
+$light-color: white;
+$dark-color: black;
 $font-stack: Helvetica,
 sans-serif;
 $text-main: Arial,
@@ -14,3 +16,4 @@ $lightened-color: color.scale($btn-color, $lightness:5%);
 $darkened-color: color.scale($btn-color, $lightness:-50%);
 $complement-color: color.complement($element-color);
 $complement2-color: color.complement($secondary-color);
+$border: 1px solid rgb(255, 255, 255);

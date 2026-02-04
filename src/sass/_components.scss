@@ -1,4 +1,4 @@
-@use "abstracts/variables";
+@use "abstracts/variables" as *; // Lagt till as * För att slippa skriva variables innan.
 %menu {
     background: none;
     border: none;
@@ -21,16 +21,16 @@
 }
 
 .btn-darkened {
-    @include btn(variables.$primary-color, variables.$color-light);
+    @include btn($primary-color, $color-light);
     &:hover {
-        background-color: variables.$darkened-color;
+        background-color: $darkened-color;
     }
     &.dark {
-        background-color: variables.$color-light;
-        color: variables.$primary-color;
+        background-color: $color-light;
+        color: $primary-color;
     }
     &.dark:hover {
-        background-color: variables.$lightened-color;
+        background-color: $lightened-color;
     }
 }
 
