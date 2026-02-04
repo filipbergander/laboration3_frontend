@@ -1,0 +1,10 @@
+@mixin theme($theme) {
+    @if $theme==dark {
+        background: black;
+        color: white;
+    }
+    @else {
+        background: white;
+        color: black;
+    }
+}
