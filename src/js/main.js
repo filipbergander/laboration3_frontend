@@ -13,8 +13,10 @@ if (darkBtn) {
         darkBtn.classList.toggle("dark"); // Lägger till classlist dark på knappen
         if (document.body.classList.contains("dark")) { // Om body.dark finns ändras knappens text
             darkBtn.innerHTML = "Ljust tema"; // Ändrar texten inom knappen
+            toggleBtn.classList.add("dark");
         } else {
             darkBtn.innerHTML = "Mörkt tema";
+            toggleBtn.classList.remove("dark");
         }
     })
 }

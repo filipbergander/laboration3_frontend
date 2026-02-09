@@ -1,4 +1,4 @@
-        @use "abstracts/variables" as *; // Lagt till as * För att slippa skriva variables innan.
+        @use "../abstracts/variables" as *; // Lagt till as * För att slippa skriva variables innan.
         %flex-layout {
             display: flex;
             align-items: center;
@@ -61,14 +61,6 @@
                 color: $light-color;
                 footer {
                     border-top: $border;
-                }
-            }
-            #btn-menu {
-                span {
-                    color: $light-color;
-                }
-                svg path {
-                    fill: $light-color;
                 }
             }
         }
@@ -226,5 +218,19 @@
                 .sass-section {
                     margin-top: 5rem;
                 }
+            }
+            #btn-menu.close {
+                display: none;
+                position: relative;
+            }
+            #btn-close {
+                position: absolute;
+                display: none;
+                margin-left: auto;
+            }
+            #btn-close.show {
+                display: flex;
+                top: 0;
+                right: 0;
             }
         }

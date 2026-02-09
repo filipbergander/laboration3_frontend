@@ -1,0 +1,65 @@
+@use "../abstracts/variables" as *; // Lagt till as * För att slippa skriva variables innan.
+%menu {
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 25;
+    height: 50px;
+    padding: 4px 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+    .btn-darkened {
+        background-color: $light-color;
+    }
+    #btn-menu {
+        span {
+            color: $light-color !important;
+        }
+        svg path {
+            fill: $light-color;
+        }
+    }
+}
+
+#btn-menu {
+    display: none;
+    @extend %menu;
+    span {
+        color: $dark-color;
+    }
+}
+
+#btn-menu.dark {
+    span {
+        color: $light-color;
+    }
+    svg path {
+        fill: $light-color;
+    }
+}
+
+#btn-close {
+    display: none;
+    @extend %menu;
+    span {
+        color: $light-color;
+    }
+}
+
+@media (max-width:505px) {
+    #btn-menu {
+        display: flex !important;
+        position: absolute;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        right: 0.5rem;
+        margin-left: auto;
+        z-index: 10;
+        transition: 0.4s ease-out;
+    }
+}
