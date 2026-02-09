@@ -27,8 +27,8 @@
             @extend %flex-layout;
             font-family: $text-fantasy;
             height: 60px;
-            background-color: $primary-color;
-            color: $light-color;
+            background-color: $light-color;
+            color: $primary-color;
             width: 100%;
             margin-top: 1rem;
         }
@@ -52,6 +52,8 @@
             color: $light-color;
             footer {
                 border-top: $border;
+                background-color: $primary-color;
+                color: $light-color;
             }
         }
         
@@ -61,6 +63,8 @@
                 color: $light-color;
                 footer {
                     border-top: $border;
+                    background-color: $primary-color;
+                    color: $light-color;
                 }
             }
         }
