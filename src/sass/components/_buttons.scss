@@ -41,6 +41,15 @@
     }
 }
 
+#btn-close.dark {
+    span {
+        color: $light-color;
+    }
+    svg path {
+        fill: $light-color;
+    }
+}
+
 #btn-close {
     display: none;
     @extend %menu;
